@@ -1,0 +1,9 @@
+{
+  "name": "opencode-team",
+  "version": "0.1.0",
+  "description": "Orchestrate multiple Claude Code workers via iTerm2 (MCP management via OpenCode/Cursor)",
+  "entry_point": "src/opencode_team_mcp",
+  "commands": {
+    "setup": "bash assets/setup.sh"
+  }
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.opencode-team</string>
+    
+    <key>ProgramArguments</key>
+    <array>
+        <string>{{UV_PATH}}</string>
+        <string>run</string>
+        <string>python</string>
+        <string>-m</string>
+        <string>opencode_team_mcp</string>
+        <string>--http</string>
+        <string>--port</string>
+        <string>8767</string>
+    </array>
+    
+    <key>WorkingDirectory</key>
+    <string>{{PROJECT_DIR}}</string>
+    
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>HOME</key>
+        <string>{{HOME}}</string>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin</string>
+    </dict>
+    
+    <key>RunAtLoad</key>
+    <true/>
+    
+    <key>KeepAlive</key>
+    <dict>
+        <key>SuccessfulExit</key>
+        <false/>
+    </dict>
+    
+    <key>StandardOutPath</key>
+    <string>{{HOME}}/.opencode-team/logs/stdout.log</string>
+    
+    <key>StandardErrorPath</key>
+    <string>{{HOME}}/.opencode-team/logs/stderr.log</string>
+    
+    <key>ProcessType</key>
+    <string>Background</string>
+    
+    <key>Nice</key>
+    <integer>0</integer>
+    
+    <key>LaunchOnlyOnce</key>
+    <false/>
+    
+    <key>LimitLoadToSessionType</key>
+    <array>
+        <string>Aqua</string>
+        <string>Background</string>
+    </array>
+    
+    <key>EnablePressingEntersKey</key>
+    <false/>
+</dict>
+</plist>

@@ -1,0 +1,129 @@
+.mascot-container {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.mascot-body {
+  width: 100px;
+  height: 100px;
+  background-color: #ff6b6b; /* Default Red Lobster */
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.mascot-face {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 60%;
+}
+
+.mascot-eyes {
+  display: flex;
+  justify-content: space-between;
+  width: 60px;
+  margin: 0 auto;
+}
+
+.eye {
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.eye::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 6px;
+  height: 6px;
+  background: black;
+  border-radius: 50%;
+}
+
+.mascot-mouth {
+  width: 30px;
+  height: 10px;
+  background: white;
+  border-radius: 0 0 15px 15px;
+  margin: 10px auto 0;
+}
+
+/* States */
+.idle .mascot-body {
+  background-color: #4ecdc4; /* Teal */
+  animation: breathe 3s infinite ease-in-out;
+}
+
+.thinking .mascot-body {
+  background-color: #ffe66d; /* Yellow */
+  animation: pulse 1s infinite;
+}
+
+.thinking .eye::after {
+  animation: lookAround 2s infinite;
+}
+
+.executing .mascot-body {
+  background-color: #ff6b6b; /* Red */
+  animation: shake 0.5s infinite;
+}
+
+.error .mascot-body {
+  background-color: #2d3436; /* Dark */
+}
+
+.error .mascot-eyes .eye {
+  background: red;
+}
+
+.mascot-status-label {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 230, 109, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(255, 230, 109, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 230, 109, 0); }
+}
+
+@keyframes lookAround {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-2px, 0); }
+  75% { transform: translate(2px, 0); }
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}

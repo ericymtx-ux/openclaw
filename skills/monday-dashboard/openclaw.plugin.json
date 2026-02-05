@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openclaw.ai/schemas/plugin.json",
+  "id": "monday-dashboard",
+  "name": "Monday Dashboard",
+  "description": "Monday Dashboard extension for OpenClaw",
+  "version": "0.1.0"
+}
